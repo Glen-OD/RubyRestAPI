@@ -1,24 +1,10 @@
 image: ruby:3.0.2
 stages:
   - test
-  - deploy
   
 test:
   stage: test
   script:
   - bundle install
   - bundle exec rake test
-
-production:
-  image: ubuntu:18.04
-  type: deploy
-  script:
-    - "export SHORT_SHA=$(echo $CI_BUILD_REF |cut -c1-8)"
-    - "echo Branch/Tag: $CI_BUILD_REF_NAME"
-    - "echo Commit: $CI_BUILD_REF"
-    - "echo CI Build: $CI_BUILD_ID"
-    - "echo Short SHA: $SHORT_SHA"
-    - docker build -t registry.hal.davecutting.uk/40233306/glenrubyrestapi:$CI_BUILD_REF_NAME-commit.$SHORT_SHA-build.$CI_BUILD_ID .
-    - docker push registry.hal.davecutting.uk/40233306/glenrubyrestapi:$CI_BUILD_REF_NAME-commit.$SHORT_SHA-build.$CI_BUILD_ID
-  
   
