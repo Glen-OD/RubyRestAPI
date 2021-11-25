@@ -10,6 +10,7 @@ test:
   - bundle exec rake test
 
 production:
+  image: ubuntu:18.04
   type: deploy
   script:
     - "export SHORT_SHA=$(echo $CI_BUILD_REF |cut -c1-8)"
