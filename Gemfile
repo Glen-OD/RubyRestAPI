@@ -1,4 +1,4 @@
-ruby '3.0'
+ruby '3.0.3'
 
 source 'http://rubygems.org'
 gem 'rack'
