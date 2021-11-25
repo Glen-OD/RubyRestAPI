@@ -7,5 +7,3 @@ test:
   script:
   - bundle install
   - bundle exec rake test
-  tags:
-  - ruby2.2.3
