@@ -1,6 +1,7 @@
 image: ruby:3.0.2
 stages:
   - test
+  - deploy
   
 test:
   stage: test
