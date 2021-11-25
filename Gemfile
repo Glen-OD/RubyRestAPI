@@ -1,0 +1,10 @@
+ruby '3.0'
+
+source 'http://rubygems.org'
+gem 'rack'
+gem 'rack-cors'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'puma'
+gem 'json'
+gem 'rake'
