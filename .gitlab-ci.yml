@@ -5,7 +5,7 @@ stages:
 test:
   stage: test
   script:
-    - bundle install
-    - bundle exec rake test
-    tags:
-    - ruby2.2.3
+  - bundle install
+  - bundle exec rake test
+  tags:
+  - ruby2.2.3
