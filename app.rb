@@ -12,6 +12,7 @@ class HiSinatra < Sinatra::Base
         my_Array = my_string.split
         numberOfAnds = my_Array.count('and')
         content_type :json
+        response['Access-Control-Allow-Origin']='*'
         #params.inspect
         "this sentence has the word 'and' this many times: " + numberOfAnds.to_s
     end
