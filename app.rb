@@ -1,19 +1,26 @@
 require 'sinatra'
+require "sinatra/json"
 
 class HiSinatra < Sinatra::Base
     get '/' do
         "Hey David!"
     end
 
-    get '/:sentence' do
-        my_string = "#{params[:sentence]}"
+    get '/x=:sentence' do
+        x = "#{params[:sentence]}"
         #print my_string
-              
-        my_Array = my_string.split
-        numberOfAnds = my_Array.count('and')
+        
+        #json({:foo => 'bar'}, :encoder => :to_json, :content_type => :json)
+        
+        
+        my_Array = x.split
+        answer = my_Array.count('and')
         content_type :json
         response['Access-Control-Allow-Origin']='*'
         #params.inspect
-        "this sentence has the word 'and' this many times: " + numberOfAnds.to_s
+        { 
+            "x": x,
+            "answer": answer
+        }.to_json
     end
 end
