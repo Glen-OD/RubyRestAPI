@@ -12,8 +12,8 @@ class HiSinatra < Sinatra::Base
         
         #json({:foo => 'bar'}, :encoder => :to_json, :content_type => :json)
         
-        
-        my_Array = x.split
+        y = x.downcase
+        my_Array = y.split
         answer = my_Array.count('and')
         content_type :json
         response['Access-Control-Allow-Origin']='*'
