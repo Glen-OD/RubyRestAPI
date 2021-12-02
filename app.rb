@@ -3,11 +3,29 @@ require "sinatra/json"
 
 class HiSinatra < Sinatra::Base
     get '/' do
-        "Hey David!"
+        x = ""
+        answer = 0
+        content_type :json
+        response['Access-Control-Allow-Origin']='*'
+        { 
+            "x": x,
+            "answer": answer
+        }.to_json
     end
 
     get '/x=:sentence' do
         x = "#{params[:sentence]}"
+        unless x != ""
+                print x
+                x = ""
+                answer = 0
+                content_type :json
+                response['Access-Control-Allow-Origin']='*'
+                { 
+                    "x": x,
+                    "answer": answer
+                }.to_json
+            end
         #print my_string
         
         #json({:foo => 'bar'}, :encoder => :to_json, :content_type => :json)
@@ -23,4 +41,16 @@ class HiSinatra < Sinatra::Base
             "answer": answer
         }.to_json
     end
+
+    get '/x=' do
+        x = ""
+        answer = 0
+        content_type :json
+        response['Access-Control-Allow-Origin']='*'
+        { 
+            "x": x,
+            "answer": answer
+        }.to_json
+    end
+
 end
