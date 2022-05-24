@@ -1,2 +1,3 @@
-# GlenRubyRestApi
+# Cloud computing project
+GlenRubyRestApi
 
